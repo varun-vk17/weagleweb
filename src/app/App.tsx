@@ -70,8 +70,13 @@ const CSS = `
   .how-p-yellow  { font-family:${F}; font-weight:400; font-size:clamp(15px,1.67vw,24px); color:#CFFE00; line-height:1.24; margin:0; }
 
   /* ── Proofs ── */
-  .proof-img     { width:100%; border-radius:15px; overflow:hidden; height:clamp(180px,39.4vw,568px); }
+  .proof-wrap    { display:flex; flex-direction:column; gap:24px; width:100%; align-items:center; }
+  .proof-img     { width:100%; border-radius:15px; overflow:hidden; height:clamp(180px,39.4vw,568px); position:relative; flex-shrink:0; }
   .proof-img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .proof-desc    { font-family:${F}; font-weight:400; font-size:clamp(16px,1.6vw,20px); color:rgba(255,255,255,0.85); text-align:center; max-width:800px; margin:0 auto; line-height:1.4; min-height: 56px; }
+  .proof-nav     { display:flex; gap:16px; align-items:center; justify-content:center; margin-top:8px; }
+  .proof-nav-btn { background:transparent; border:1px solid rgba(255,255,255,0.2); border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; color:#fff; cursor:pointer; transition:all 0.2s; }
+  .proof-nav-btn:hover { background:#CFFE00; color:#000; border-color:#CFFE00; }
 
   /* ── Bento / Service section ── */
   .bento-grid    { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:20px; width:100%; }
@@ -351,15 +356,55 @@ function HowSection() {
 }
 
 /* ─────────────── PROOFS ───────────────────────────────────────── */
+const proofItems = [
+  { img: imgFrame20, desc: "A high-conversion cinematic ad for a popular sports brand that skyrocketed engagement." },
+  { img: imgFrame12, desc: "Performance-focused creative that increased sales by 45% within the first two weeks." },
+  { img: imgFrame13, desc: "A sleek product showcase optimized for maximum social media conversion." },
+  { img: imgFrame14, desc: "Dynamic storytelling combined with performance metrics for an unstoppable campaign." },
+  { img: imgFrame15, desc: "An attention-grabbing hook that halved customer acquisition costs for this brand." }
+];
+
 function ProofsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const next = () => setCurrentIndex((prev) => (prev + 1) % proofItems.length);
+  const prev = () => setCurrentIndex((prev) => (prev === 0 ? proofItems.length - 1 : prev - 1));
+
   return (
     <section id="proofs" className="section-py section-px w-full">
       <div className="col-center" style={{ gap: "clamp(40px,7.5vw,108px)" }}>
         <ScrollReveal direction="left" distance={100}>
           <p className="sec-title">Ads that didn{"'"}t just look better — they performed better</p>
         </ScrollReveal>
-        <ScrollReveal direction="up" distance={140} delay={0.3} className="proof-img">
-          <img src={imgFrame20} alt="" />
+        
+        <ScrollReveal direction="up" distance={140} delay={0.3} className="proof-wrap">
+          <div style={{ position: "relative", width: "100%", display: "flex", flexDirection: "column", gap: 24 }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="col-center"
+                style={{ gap: 24, width: "100%" }}
+              >
+                <div className="proof-img">
+                  <img src={proofItems[currentIndex].img} alt="Ad Example" />
+                </div>
+                <p className="proof-desc">{proofItems[currentIndex].desc}</p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          
+          <div className="proof-nav">
+            <button className="proof-nav-btn" onClick={prev}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+            <button className="proof-nav-btn" onClick={next}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
+          </div>
         </ScrollReveal>
       </div>
     </section>
