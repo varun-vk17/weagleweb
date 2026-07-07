@@ -594,14 +594,14 @@ export default function App() {
               initial={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
-              style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '51%', background: '#080808' }}
+              style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '51%', background: '#000000' }}
             />
             {/* Bottom Shutter */}
             <motion.div
               initial={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
-              style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '51%', background: '#080808' }}
+              style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '51%', background: '#000000' }}
             />
             
             {/* Expanding Line */}
