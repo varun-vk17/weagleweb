@@ -23,6 +23,7 @@ const CSS = `
     to   { transform: translateX(-50%); }
   }
 
+  html, body { overflow-x: hidden; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   *, *::before, *::after { box-sizing: border-box; }
 
