@@ -594,14 +594,14 @@ export default function App() {
               initial={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
-              style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '50vh', background: '#080808' }}
+              style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '51%', background: '#080808' }}
             />
             {/* Bottom Shutter */}
             <motion.div
               initial={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
-              style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '50vh', background: '#080808' }}
+              style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '51%', background: '#080808' }}
             />
             
             {/* Expanding Line */}
@@ -610,11 +610,11 @@ export default function App() {
               animate={{ scaleX: 1 }}
               exit={{ opacity: 0, scaleY: 0 }}
               transition={{ scaleX: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }, exit: { duration: 0.3 } }}
-              style={{ position: 'absolute', top: 'calc(50% + 45px)', left: 0, right: 0, height: '2px', background: '#CFFE00', translateY: '-50%', zIndex: 10 }}
+              style={{ position: 'absolute', top: 'calc(50% + clamp(24px, 4vw, 45px))', left: 0, right: 0, height: '2px', background: '#CFFE00', translateY: '-50%', zIndex: 10 }}
             />
 
             {/* Text Reveal */}
-            <motion.div style={{ zIndex: 11, overflow: 'hidden' }}>
+            <motion.div style={{ zIndex: 11 }}>
               <motion.h2
                 initial={{ y: 100, rotate: 8, opacity: 0 }}
                 animate={{ y: 0, rotate: 0, opacity: 1 }}
