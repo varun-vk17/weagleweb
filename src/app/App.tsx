@@ -508,16 +508,16 @@ function Footer() {
         <div className="footer-brand">
           <div className="footer-logo-row">
             <LogoMark />
-            <p className="footer-brand-name">Weagle</p>
+            <p className="footer-brand-name">Weagle marketing</p>
           </div>
           <p className="footer-tagline">We build creative ads that capture attention and turn it into measurable revenue.</p>
           <div className="footer-socials">
             {/* Instagram */}
-            <div className="footer-social-btn">
+            <a href="https://www.instagram.com/weagle_marketing?igsh=NWc3NHdqdWVkYmZy" target="_blank" rel="noopener noreferrer" className="footer-social-btn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="rgba(255,255,255,0.6)" stroke="none"/>
               </svg>
-            </div>
+            </a>
             {/* Twitter / X */}
             <div className="footer-social-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,0.6)">
@@ -540,31 +540,31 @@ function Footer() {
             <a href="#service" className="footer-col-link">Services</a>
             <a href="#about" className="footer-col-link">About us</a>
             <a href="#proofs" className="footer-col-link">Case Studies</a>
-            <a href="mailto:hello@weagle.co" className="footer-col-link">Contact</a>
+            <a href="mailto:marketing.weagle@gmail.com" className="footer-col-link">Contact</a>
           </div>
           <div className="footer-col">
             <p className="footer-col-title">Support</p>
             <a href="#about" className="footer-col-link">How it works</a>
-            <a href="mailto:hello@weagle.co" className="footer-col-link">24/7 Chat support</a>
-            <a href="mailto:hello@weagle.co" className="footer-col-link">hello@weagle.co</a>
+            <a href="mailto:marketing.weagle@gmail.com" className="footer-col-link">24/7 Chat support</a>
+            <a href="mailto:marketing.weagle@gmail.com" className="footer-col-link">marketing.weagle@gmail.com</a>
           </div>
           <div className="footer-col">
             <p className="footer-col-title">Work</p>
             <a href="#proofs" className="footer-col-link">Portfolio</a>
             <a href="#proofs" className="footer-col-link">Reviews</a>
-            <a href="mailto:hello@weagle.co" className="footer-col-link">Get a breakdown</a>
+            <a href="mailto:marketing.weagle@gmail.com" className="footer-col-link">Get a breakdown</a>
           </div>
         </div>
       </ScrollReveal>
 
       {/* Giant wordmark */}
       <ScrollReveal direction="up" distance={120} delay={0.3} className="footer-wordmark-wrap">
-        <span className="footer-wordmark">Weagle</span>
+        <span className="footer-wordmark">Weagle marketing</span>
       </ScrollReveal>
 
       {/* Bottom bar */}
       <ScrollReveal direction="none" delay={0.6} className="footer-bottom">
-        <p className="footer-copy">© 2025 Weagle. All rights reserved.</p>
+        <p className="footer-copy">© 2025 Weagle marketing. All rights reserved.</p>
         <p className="footer-copy-right">Built to convert. Designed to impress.</p>
       </ScrollReveal>
     </footer>
